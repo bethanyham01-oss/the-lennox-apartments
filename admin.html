@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#191916">
+  <title>Admin | The Lennox Apartments</title>
+  <link rel="icon" href="assets/lennox-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="admin.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="monogram">L</span><span><b>THE LENNOX</b><small>APARTMENTS · ADMIN</small></span></a>
+      <a class="back-link" href="index.html">View website ↗</a>
+    </header>
+
+    <section class="login-panel" id="login-panel">
+      <p class="eyebrow">PRIVATE PROPERTY MANAGEMENT</p>
+      <h1>Welcome <em>back.</em></h1>
+      <p class="muted">Sign in with the administrator account created for this property.</p>
+      <form id="login-form">
+        <label>Email address<input type="email" name="email" autocomplete="username" required placeholder="admin@example.com"></label>
+        <label>Password<input type="password" name="password" autocomplete="current-password" required placeholder="Your password"></label>
+        <button class="primary" type="submit">Sign in securely</button>
+      </form>
+      <p class="notice" id="login-message" role="alert"></p>
+      <p class="fine">Administrator accounts are created in Supabase by the site owner. There is no public sign-up link.</p>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="dashboard-heading">
+        <div><p class="eyebrow">PROPERTY OVERVIEW</p><h1>Booking <em>management.</em></h1><p class="muted" id="admin-email"></p></div>
+        <button class="secondary" id="signout">Sign out</button>
+      </div>
+      <div class="stats">
+        <article><span>Total requests</span><strong id="total-count">—</strong></article>
+        <article><span>Awaiting response</span><strong id="pending-count">—</strong></article>
+        <article><span>Confirmed</span><strong id="confirmed-count">—</strong></article>
+        <article><span>Payment marked paid</span><strong id="paid-count">—</strong></article>
+      </div>
+      <div class="toolbar">
+        <div><h2>Booking requests</h2><p class="muted">Review guest details and update each request.</p></div>
+        <div class="toolbar-actions"><select id="status-filter" aria-label="Filter bookings"><option value="all">All requests</option><option value="new">New</option><option value="contacted">Contacted</option><option value="confirmed">Confirmed</option><option value="cancelled">Cancelled</option></select><button class="secondary" id="refresh">Refresh</button></div>
+      </div>
+      <p class="notice" id="dashboard-message" role="status"></p>
+      <div class="booking-list" id="booking-list"><div class="empty">Loading booking requests…</div></div>
+      <p class="fine bottom-note">Payment status is updated manually after you verify the payment in your Paystack account. This dashboard does not independently verify transactions.</p>
+    </section>
+    <footer>THE LENNOX APARTMENTS · AIRPORT RESIDENTIAL, ACCRA</footer>
+  </main>
+</body>
+</html>
