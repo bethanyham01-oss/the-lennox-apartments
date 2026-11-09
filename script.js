@@ -17,6 +17,20 @@ if (menuButton && navigation) {
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
+
+// Room cards set the apartment and selected official rate in the booking form.
+const apartmentSelect = document.getElementById("apartment-select");
+const selectedRateInput = document.getElementById("selected-rate");
+document.querySelectorAll(".rate-choice").forEach((button) => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".rate-choice.selected").forEach((item) => item.classList.remove("selected"));
+    button.classList.add("selected");
+    if (apartmentSelect) apartmentSelect.value = button.dataset.room || "";
+    if (selectedRateInput) selectedRateInput.value = button.dataset.rate || "";
+    document.getElementById("booking")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
 const bookingForm = document.getElementById("booking-form");
 const checkIn = bookingForm?.elements.namedItem("checkin");
 const checkOut = bookingForm?.elements.namedItem("checkout");
@@ -41,11 +55,14 @@ if (bookingForm) bookingForm.addEventListener("submit", async (event) => {
     check_in: String(data.get("checkin") || ""),
     check_out: String(data.get("checkout") || ""),
     guests: String(data.get("guests") || ""),
-    apartment_type: String(data.get("apartment") || "Not sure yet"),
-    guest_message: String(data.get("notes") || "").trim() || null
+    apartment_type: String(data.get("apartment") || "Not selected"),
+    guest_message: [
+      `Selected rate: ${String(data.get("selected_rate") || "Not selected")}`,
+      `Guest notes: ${String(data.get("notes") || "").trim() || "None"}`
+    ].join("\n")
   };
-  if (!booking.guest_name || !booking.check_in || !booking.check_out || !booking.guests) {
-    errorBox.textContent = "Please complete all required fields."; return;
+  if (!booking.guest_name || !booking.check_in || !booking.check_out || !booking.guests || !data.get("apartment") || !data.get("selected_rate")) {
+    errorBox.textContent = "Please complete all required fields and select an apartment rate above."; return;
   }
   if (booking.check_out <= booking.check_in) {
     errorBox.textContent = "Check-out must be after the check-in date."; checkOut.focus(); return;
@@ -55,8 +72,8 @@ if (bookingForm) bookingForm.addEventListener("submit", async (event) => {
     "Hello The Lennox Apartments, I would like to request a booking.", "",
     `Full name: ${booking.guest_name}`, `Email: ${booking.guest_email || "Not provided"}`,
     `Check-in: ${booking.check_in}`, `Check-out: ${booking.check_out}`,
-    `Guests: ${booking.guests}`, `Apartment preference: ${booking.apartment_type}`,
-    `Additional details: ${booking.guest_message || "None"}`, "",
+    `Guests: ${booking.guests}`, `Apartment: ${booking.apartment_type}`,
+    `${booking.guest_message || "Additional details: None"}`, "",
     "Please confirm availability, total rate and the next steps. I understand this request is not a confirmed reservation."
   ].join("\n");
   const whatsappUrl = `https://wa.me/233205289701?text=${encodeURIComponent(message)}`;
