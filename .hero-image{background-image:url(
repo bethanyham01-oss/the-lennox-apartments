@@ -220,3 +220,365 @@ body{padding-bottom:58px}
 .rate-choice strong{font-size:10px}
 .room-content{padding:22px 18px}
 }
+/* =========================================
+   THE LENNOX APARTMENTS
+   PREMIUM NAVY & WHITE DESIGN
+========================================= */
+
+:root {
+  --navy: #102541;
+  --navy-deep: #091a30;
+  --gold: #c5a36b;
+  --white: #ffffff;
+  --soft-white: #f7f8fa;
+  --text: #253247;
+  --muted: #758092;
+}
+
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+.announcement {
+  background: var(--navy-deep);
+  color: #e5c995;
+  padding: 11px 16px;
+  letter-spacing: .14em;
+}
+
+.site-header {
+  background: var(--white);
+  box-shadow: 0 3px 20px rgba(16,37,65,.07);
+  position: sticky;
+  top: 0;
+}
+
+.brand strong {
+  color: var(--navy);
+  letter-spacing: .08em;
+}
+
+.brand small {
+  color: #a88956;
+}
+
+.main-nav {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.main-nav>a:not(.nav-cta) {
+  color: var(--navy);
+}
+
+.main-nav>a:hover {
+  color: var(--gold);
+}
+
+.nav-cta {
+  background: var(--navy);
+  color: white;
+  border-radius: 3px;
+  padding: 14px 22px;
+}
+
+.nav-cta:hover {
+  background: var(--gold);
+  color: var(--navy-deep);
+}
+
+.menu-toggle {
+  color: var(--navy);
+}
+
+.hero {
+  background-color: var(--navy-deep);
+  min-height: 680px;
+}
+
+.hero-shade {
+  background: linear-gradient(
+    90deg,
+    rgba(7,24,45,.84),
+    rgba(7,24,45,.48),
+    rgba(7,24,45,.12)
+  );
+}
+
+.hero h1 {
+  font-weight: 500;
+  letter-spacing: -.045em;
+}
+
+.hero h1 em,
+h2 em {
+  color: var(--gold);
+}
+
+.eyebrow,
+.section-kicker {
+  color: #a88650;
+}
+
+.button {
+  border-radius: 3px;
+  transition: all .25s ease;
+}
+
+.button-gold {
+  background: var(--gold);
+  color: var(--navy-deep);
+}
+
+.button-gold:hover {
+  background: white;
+  color: var(--navy);
+}
+
+.button-dark {
+  background: var(--navy);
+  color: white;
+}
+
+.button-dark:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.section-pad {
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+
+.intro,
+.amenities,
+.faq-section {
+  background: white;
+}
+
+.intro h2,
+.section-heading h2,
+.booking-intro h2 {
+  color: var(--navy);
+}
+
+.large-copy {
+  color: #a18455;
+}
+
+.feature-band {
+  background: var(--soft-white);
+}
+
+.feature-text h2,
+.location-copy h2 {
+  color: var(--navy);
+}
+
+.residences,
+.gallery-section {
+  background: var(--soft-white);
+}
+
+.residence-card,
+.room-card {
+  background: white;
+  box-shadow: 0 8px 30px rgba(16,37,65,.06);
+}
+
+.residence-info h3,
+.room-content h3 {
+  color: var(--navy);
+}
+
+.card-index,
+.room-topline {
+  color: #a18455;
+}
+
+.rate-choice {
+  border-radius: 3px;
+  border-color: #dce2e9;
+}
+
+.rate-choice:hover,
+.rate-choice.selected {
+  background: #edf2f8;
+  border-color: var(--gold);
+}
+
+.rate-choice strong {
+  color: var(--navy);
+}
+
+.amenity-grid {
+  border-color: #e1e6ed;
+}
+
+.amenity-item {
+  border-color: #e1e6ed;
+}
+
+.amenity-icon {
+  color: var(--gold);
+}
+
+.amenity-item h3 {
+  color: var(--navy);
+}
+
+.booking-section {
+  background: #edf1f6;
+}
+
+.booking-form {
+  background: white;
+  border: 1px solid #e5e9ef;
+  border-radius: 5px;
+  box-shadow: 0 15px 45px rgba(16,37,65,.08);
+}
+
+.form-heading span {
+  color: var(--navy);
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  border: 1px solid #dce2e9;
+  border-radius: 3px;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus {
+  outline: 2px solid var(--gold);
+}
+
+.payment-strip,
+.location-section {
+  background: var(--navy-deep);
+}
+
+.payment-strip {
+  color: white;
+}
+
+.payment-strip h2,
+.location-copy h2 {
+  color: white;
+}
+
+.location-copy h2 em {
+  color: var(--gold);
+}
+
+.location-image {
+  opacity: 1;
+}
+
+.location-copy .button {
+  background: var(--gold);
+  color: var(--navy-deep);
+}
+
+.faq-list {
+  border-color: #e1e6ed;
+}
+
+.faq-list details {
+  border-color: #e1e6ed;
+}
+
+.faq-list summary {
+  color: var(--navy);
+}
+
+.contact {
+  background: white;
+}
+
+.contact h2 {
+  color: var(--navy);
+}
+
+.contact-number {
+  color: var(--navy);
+}
+
+.site-footer {
+  background: var(--navy-deep);
+  color: white;
+}
+
+.footer-bottom a {
+  color: var(--gold);
+}
+
+.mobile-booking-bar {
+  background: var(--navy-deep);
+}
+
+.mobile-booking-bar a {
+  background: var(--gold);
+  color: var(--navy-deep);
+  border-radius: 3px;
+}
+
+/* Smoother image presentation */
+
+.gallery-item img,
+.room-card img {
+  transition: transform .45s ease;
+}
+
+.gallery-item:hover img,
+.room-card:hover img {
+  transform: scale(1.035);
+}
+
+/* Mobile refinement */
+
+@media(max-width:800px) {
+  .site-header {
+    background: white;
+  }
+
+  .main-nav {
+    background: white;
+  }
+
+  .hero {
+    min-height: 620px;
+  }
+
+  .section-pad {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .booking-form {
+    border-radius: 4px;
+  }
+}
+
+@media(max-width:480px) {
+  .announcement {
+    font-size: 8px;
+  }
+
+  .hero h1 {
+    line-height: 1.08;
+  }
+
+  .room-card {
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .mobile-booking-bar a {
+    border-radius: 3px;
+  }
+}
